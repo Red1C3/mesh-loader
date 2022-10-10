@@ -1,7 +1,7 @@
 #include <MeshBase.h>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
-
+#include <exception>
 using namespace meshLoader;
 using namespace std;
 using namespace glm;
