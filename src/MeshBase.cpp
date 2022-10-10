@@ -4,7 +4,7 @@ using namespace meshLoader;
 using namespace std;
 using namespace glm;
 
-MeshBase::MeshBase(unique_ptr<MeshBase> wrappee) : wrappee(wrappee)
+MeshBase::MeshBase(unique_ptr<MeshBase> wrappee) : wrappee(move(wrappee))
 {
 }
 const vector<vec3> &MeshBase::getPositions()
@@ -18,4 +18,7 @@ const vector<vec3> &MeshBase::getNormals()
 const vector<vec2> &MeshBase::getUvCoords0()
 {
     return wrappee->getUvCoords0();
+}
+const vector<unsigned> &MeshBase::getIndices(){
+    return wrappee->getIndices();
 }
