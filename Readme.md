@@ -1,6 +1,6 @@
 # mesh-loader
 
-A raw data mesh loader
+A GLM data mesh loader
 
 ## Support
 All Assimp supported formats are supported, so far, the library extracts position, normals, uv0 and indices data.
