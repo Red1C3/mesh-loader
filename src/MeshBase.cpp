@@ -40,7 +40,8 @@ vector<unsigned> MeshBase::getIndices()
 void MeshBase::_load(const char *path, int idx)
 {
     auto scene = importer.ReadFile(path, aiProcess_Triangulate);
-    if(scene==nullptr){
+    if (scene == nullptr)
+    {
         throw runtime_error(string("Failed to read " + string(path)));
     }
     if (scene->mNumMeshes <= idx)
@@ -56,7 +57,8 @@ void MeshBase::_closeFile()
 {
     importer.FreeScene();
 }
-void MeshBase::load(const char* path,int idx){
+void MeshBase::load(const char *path, int idx)
+{
     _load(path, idx);
     _closeFile();
 }

@@ -9,4 +9,3 @@ h_files = [f for f in listdir(cwd) if os.path.isfile(
     join(cwd, f)) and os.path.splitext(f)[1] == '.h']
 for f in h_files:
     print('./include/'+f)
-
