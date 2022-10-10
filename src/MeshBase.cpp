@@ -37,7 +37,7 @@ vector<unsigned> MeshBase::getIndices()
         return indices;
     return wrappee->getIndices();
 }
-void MeshBase::load(const char *path, int idx)
+void MeshBase::_load(const char *path, int idx)
 {
     auto scene = importer.ReadFile(path, aiProcess_Triangulate);
     if(scene==nullptr){
@@ -52,7 +52,11 @@ void MeshBase::load(const char *path, int idx)
                                    " doesn't exist\n"));
     }
 }
-void MeshBase::closeFile()
+void MeshBase::_closeFile()
 {
     importer.FreeScene();
+}
+void MeshBase::load(const char* path,int idx){
+    _load(path, idx);
+    _closeFile();
 }

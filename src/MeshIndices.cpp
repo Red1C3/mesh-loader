@@ -7,11 +7,11 @@ vector<unsigned> MeshIndices::getIndices()
 {
     return indices;
 }
-void MeshIndices::load(const char *path, int idx)
+void MeshIndices::_load(const char *path, int idx)
 {
     if (wrappee != nullptr)
     {
-        wrappee->load(path, idx);
+        wrappee->_load(path, idx);
     }
     auto mesh = importer.GetScene()->mMeshes[idx];
     for (int i = 0; i < mesh->mNumFaces; ++i)

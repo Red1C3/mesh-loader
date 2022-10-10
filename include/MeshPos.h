@@ -7,6 +7,6 @@ namespace meshLoader
     public:
         using MeshBase::MeshBase;
         std::vector<glm::vec3> getPositions() override;
-        void load(const char *path,int idx) override;
+        void _load(const char *path,int idx) override;
     };
 }

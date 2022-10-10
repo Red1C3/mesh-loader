@@ -8,11 +8,11 @@ vector<vec3> MeshNorm::getNormals()
 {
     return normals;
 }
-void MeshNorm::load(const char *path, int idx)
+void MeshNorm::_load(const char *path, int idx)
 {
     if (wrappee != nullptr)
     {
-        wrappee->load(path, idx);
+        wrappee->_load(path, idx);
     }
     auto mesh = importer.GetScene()->mMeshes[idx];
     for (int i = 0; i < mesh->mNumVertices; ++i)

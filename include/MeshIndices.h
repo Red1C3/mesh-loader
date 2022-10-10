@@ -7,6 +7,6 @@ namespace meshLoader
     public:
         using MeshBase::MeshBase;
         std::vector<unsigned> getIndices() override;
-        void load(const char *path, int idx);
+        void _load(const char *path, int idx);
     };
 }
