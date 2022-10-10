@@ -2,7 +2,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <memory>
-#include<assimp/Importer.hpp>
+#include <assimp/Importer.hpp>
 namespace meshLoader
 {
     class MeshBase
@@ -17,11 +17,12 @@ namespace meshLoader
 
     public:
         MeshBase(std::unique_ptr<MeshBase> wrappee);
+        virtual ~MeshBase() = default;
         virtual const std::vector<glm::vec3> &getPositions();
         virtual const std::vector<glm::vec3> &getNormals();
         virtual const std::vector<glm::vec2> &getUvCoords0();
         virtual const std::vector<unsigned> &getIndices();
-        virtual void load(const char *path,int idx);
+        virtual void load(const char *path, int idx);
         void closeFile();
     };
 }
