@@ -40,6 +40,9 @@ vector<unsigned> MeshBase::getIndices()
 void MeshBase::load(const char *path, int idx)
 {
     auto scene = importer.ReadFile(path, aiProcess_Triangulate);
+    if(scene==nullptr){
+        throw runtime_error(string("Failed to read " + string(path)));
+    }
     if (scene->mNumMeshes <= idx)
     {
         throw runtime_error(string("Requested index " +
