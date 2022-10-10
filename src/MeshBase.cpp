@@ -1,8 +1,13 @@
 #include <MeshBase.h>
+#include <assimp/postprocess.h>
+#include<assimp/scene.h>
 
 using namespace meshLoader;
 using namespace std;
 using namespace glm;
+using namespace Assimp;
+
+Importer MeshBase::importer;
 
 MeshBase::MeshBase(unique_ptr<MeshBase> wrappee) : wrappee(move(wrappee))
 {
@@ -30,4 +35,13 @@ const vector<unsigned> &MeshBase::getIndices()
     if (wrappee == nullptr)
         return indices;
     return wrappee->getIndices();
+}
+void MeshBase::load(const char *path)
+{
+    auto scene = importer.ReadFile(path, aiProcess_Triangulate);
+    mesh = scene->mMeshes[0];
+}
+void MeshBase::closeFile()
+{
+    importer.FreeScene();
 }

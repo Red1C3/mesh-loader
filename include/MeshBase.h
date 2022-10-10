@@ -2,6 +2,8 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <memory>
+#include<assimp/Importer.hpp>
+#include<assimp/mesh.h>
 namespace meshLoader
 {
     class MeshBase
@@ -12,6 +14,8 @@ namespace meshLoader
         std::vector<glm::vec2> uvCoords0;
         std::vector<unsigned> indices;
         std::unique_ptr<MeshBase> wrappee;
+        aiMesh *mesh;
+        static Assimp::Importer importer;
 
     public:
         MeshBase(std::unique_ptr<MeshBase> wrappee);
@@ -19,6 +23,7 @@ namespace meshLoader
         virtual const std::vector<glm::vec3> &getNormals();
         virtual const std::vector<glm::vec2> &getUvCoords0();
         virtual const std::vector<unsigned> &getIndices();
-        virtual void load(const char *path) = 0;
+        virtual void load(const char *path);
+        void closeFile();
     };
 }
