@@ -16,12 +16,12 @@ namespace meshLoader
         static Assimp::Importer importer;
 
     public:
-        MeshBase(std::unique_ptr<MeshBase> wrappee);
+        MeshBase(std::unique_ptr<MeshBase> &&wrappee);
         virtual ~MeshBase() = default;
-        virtual const std::vector<glm::vec3> &getPositions();
-        virtual const std::vector<glm::vec3> &getNormals();
-        virtual const std::vector<glm::vec2> &getUvCoords0();
-        virtual const std::vector<unsigned> &getIndices();
+        virtual std::vector<glm::vec3> getPositions();
+        virtual std::vector<glm::vec3> getNormals();
+        virtual std::vector<glm::vec2> getUvCoords0();
+        virtual std::vector<unsigned> getIndices();
         virtual void load(const char *path, int idx);
         void closeFile();
     };

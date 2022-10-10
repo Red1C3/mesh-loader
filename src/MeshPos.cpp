@@ -4,7 +4,7 @@ using namespace meshLoader;
 using namespace std;
 using namespace glm;
 
-const vector<vec3> &MeshPos::getPositions()
+vector<vec3> MeshPos::getPositions()
 {
     return positions;
 }
