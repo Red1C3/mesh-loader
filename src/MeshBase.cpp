@@ -1,6 +1,6 @@
 #include <MeshBase.h>
 #include <assimp/postprocess.h>
-#include<assimp/scene.h>
+#include <assimp/scene.h>
 
 using namespace meshLoader;
 using namespace std;
@@ -36,10 +36,17 @@ const vector<unsigned> &MeshBase::getIndices()
         return indices;
     return wrappee->getIndices();
 }
-void MeshBase::load(const char *path)
+void MeshBase::load(const char *path, int idx)
 {
     auto scene = importer.ReadFile(path, aiProcess_Triangulate);
-    mesh = scene->mMeshes[0];
+    if (scene->mNumMeshes <= idx)
+    {
+        throw runtime_error(string("Requested index " +
+                                   to_string(idx) +
+                                   " At mesh " +
+                                   path +
+                                   " doesn't exist\n"));
+    }
 }
 void MeshBase::closeFile()
 {
