@@ -6,7 +6,7 @@ namespace meshLoader
     {
     public:
         using MeshBase::MeshBase;
-        virtual std::vector<glm::vec3> getPositions();
-        virtual void load(const char *path,int idx);
+        std::vector<glm::vec3> getPositions() override;
+        void load(const char *path,int idx) override;
     };
 }
