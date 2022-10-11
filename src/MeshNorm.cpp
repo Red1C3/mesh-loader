@@ -1,4 +1,4 @@
-#include <MeshNorm.h>
+#include <mesh-loader/MeshNorm.h>
 #include <assimp/scene.h>
 using namespace meshLoader;
 using namespace std;

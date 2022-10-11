@@ -1,4 +1,4 @@
-#include <MeshIndices.h>
+#include <mesh-loader/MeshIndices.h>
 #include <assimp/scene.h>
 using namespace meshLoader;
 using namespace glm;

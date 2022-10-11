@@ -1,4 +1,4 @@
-#include <MeshUV0.h>
+#include <mesh-loader/MeshUV0.h>
 #include <assimp/scene.h>
 using namespace meshLoader;
 using namespace std;

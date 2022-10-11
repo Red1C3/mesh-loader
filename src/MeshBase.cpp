@@ -1,4 +1,4 @@
-#include <MeshBase.h>
+#include <mesh-loader/MeshBase.h>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
 #include <stdexcept>

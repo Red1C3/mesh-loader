@@ -1,5 +1,5 @@
 #pragma once
-#include <MeshBase.h>
+#include <mesh-loader/MeshBase.h>
 namespace meshLoader
 {
     class MeshIndices : public MeshBase

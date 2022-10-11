@@ -1,12 +1,12 @@
 #pragma once
-#include <MeshBase.h>
+#include <mesh-loader/MeshBase.h>
 namespace meshLoader
 {
-    class MeshPos : public MeshBase
+    class MeshUV0 : public MeshBase
     {
     public:
         using MeshBase::MeshBase;
-        std::vector<glm::vec3> getPositions() override;
+        std::vector<glm::vec2> getUvCoords0() override;
         void _load(const char *path, int idx) override;
     };
 }
