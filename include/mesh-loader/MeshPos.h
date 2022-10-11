@@ -8,5 +8,6 @@ namespace meshLoader
         using MeshBase::MeshBase;
         std::vector<glm::vec3> getPositions() override;
         void _load(const char *path, int idx) override;
+        unsigned verticesCount() override;
     };
 }

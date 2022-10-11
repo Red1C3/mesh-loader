@@ -8,5 +8,6 @@ namespace meshLoader
         using MeshBase::MeshBase;
         std::vector<glm::vec2> getUvCoords0() override;
         void _load(const char *path, int idx) override;
+        unsigned verticesCount() override;
     };
 }

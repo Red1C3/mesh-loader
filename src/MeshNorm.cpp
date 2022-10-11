@@ -22,3 +22,6 @@ void MeshNorm::_load(const char *path, int idx)
                                mesh->mNormals[i].z));
     }
 }
+unsigned MeshNorm::verticesCount(){
+    return normals.size();
+}

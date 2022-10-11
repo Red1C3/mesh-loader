@@ -21,3 +21,6 @@ void MeshPos::_load(const char *path, int idx)
                                  mesh->mVertices[i].z});
     }
 }
+unsigned MeshPos::verticesCount(){
+    return positions.size();
+}

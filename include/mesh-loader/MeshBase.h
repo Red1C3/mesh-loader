@@ -23,6 +23,8 @@ namespace meshLoader
         virtual std::vector<glm::vec2> getUvCoords0();
         virtual std::vector<unsigned> getIndices();
         virtual void _load(const char *path, int idx);
+        virtual unsigned verticesCount();
+
         void _closeFile();
         void load(const char *path, int idx);
     };

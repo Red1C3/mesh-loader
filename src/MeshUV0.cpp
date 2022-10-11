@@ -19,3 +19,6 @@ void MeshUV0::_load(const char *path, int idx)
         uvCoords0.push_back(vec2(mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y));
     }
 }
+unsigned MeshUV0::verticesCount(){
+    return uvCoords0.size();
+}

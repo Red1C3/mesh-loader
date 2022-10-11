@@ -62,3 +62,10 @@ void MeshBase::load(const char *path, int idx)
     _load(path, idx);
     _closeFile();
 }
+unsigned MeshBase::verticesCount(){
+    if(wrappee==nullptr){
+        return 0;
+    }else{
+        return wrappee->verticesCount();
+    }
+}
